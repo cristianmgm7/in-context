@@ -1,13 +1,18 @@
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:incontext/core/app/app.dart';
+import 'package:incontext/core/config/firebase_config.dart';
+import 'package:incontext/core/config/flavor_config.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  // Initialize AppConfig first (also loads .env file)
+  await AppConfig.initialize();
+
   // Initialize Firebase
-  await Firebase.initializeApp();
+  final firebaseConfig = FirebaseConfig();
+  await firebaseConfig.initialize();
 
   runApp(
     const ProviderScope(
