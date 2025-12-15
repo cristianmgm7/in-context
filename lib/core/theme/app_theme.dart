@@ -85,7 +85,8 @@ class AppTheme {
           borderRadius: AppRadii.radiusSm,
           borderSide: BorderSide(color: colorScheme.error),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         labelStyle: AppTypography.textTheme.bodyLarge,
         hintStyle: AppTypography.textTheme.bodyLarge?.copyWith(
           color: colorScheme.onSurfaceVariant,
@@ -201,7 +202,8 @@ class AppTheme {
           borderRadius: AppRadii.radiusSm,
           borderSide: BorderSide(color: colorScheme.error),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
         labelStyle: AppTypography.textTheme.bodyLarge,
         hintStyle: AppTypography.textTheme.bodyLarge?.copyWith(
           color: colorScheme.onSurfaceVariant,

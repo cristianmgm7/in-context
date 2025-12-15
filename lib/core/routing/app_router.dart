@@ -8,7 +8,8 @@ import 'package:incontext/core/routing/pages/splash_screen.dart';
 import 'package:incontext/features/auth/presentation/providers/auth_providers.dart';
 import 'package:incontext/features/auth/presentation/screens/login_screen.dart';
 import 'package:incontext/features/auth/presentation/screens/register_screen.dart';
-// Removed imports for features not yet implemented
+import 'package:incontext/features/context/presentation/screens/project_screen.dart';
+import 'package:incontext/features/context/presentation/screens/projects_list_screen.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
@@ -43,7 +44,8 @@ final routerProvider = Provider<GoRouter>((ref) {
     routes: [
       GoRoute(
         path: AppRoutes.splash,
-        builder: (context, state) => const SplashScreen(title: 'Getting ready...'),
+        builder: (context, state) =>
+            const SplashScreen(title: 'Getting ready...'),
       ),
 
       // Public routes (outside shell)
@@ -59,14 +61,20 @@ final routerProvider = Provider<GoRouter>((ref) {
       // Main app route (authenticated)
       GoRoute(
         path: AppRoutes.home,
-        builder: (context, state) => const Scaffold(
-          body: Center(
-            child: Text(
-              'Welcome to InContext!',
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-            ),
-          ),
-        ),
+        builder: (context, state) => const ProjectsListScreen(),
+      ),
+
+      // Projects routes
+      GoRoute(
+        path: AppRoutes.projects,
+        builder: (context, state) => const ProjectsListScreen(),
+      ),
+      GoRoute(
+        path: '/projects/:id',
+        builder: (context, state) {
+          final projectId = state.pathParameters['id']!;
+          return ProjectScreen(projectId: projectId);
+        },
       ),
     ],
     errorBuilder: (context, state) => ErrorPage(

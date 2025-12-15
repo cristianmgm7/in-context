@@ -10,7 +10,8 @@ class KeyboardDismisser extends SingleChildStatelessWidget {
       behavior: HitTestBehavior.translucent,
       onTap: () {
         final focusScopeNode = FocusScope.of(context);
-        if (!focusScopeNode.hasPrimaryFocus && focusScopeNode.focusedChild != null) {
+        if (!focusScopeNode.hasPrimaryFocus &&
+            focusScopeNode.focusedChild != null) {
           FocusManager.instance.primaryFocus?.unfocus();
         }
       },

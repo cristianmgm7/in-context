@@ -9,6 +9,9 @@ import 'package:image_picker/image_picker.dart';
 import 'package:incontext/core/config/firebase_config.dart';
 import 'package:incontext/core/config/flavor_config.dart' as app_config;
 import 'package:incontext/core/services/audio_recorder_service.dart';
+import 'package:incontext/core/services/dummy_context_enhancement_service.dart';
+import 'package:incontext/core/services/dummy_output_generation_service.dart';
+import 'package:incontext/core/services/dummy_transcription_service.dart';
 import 'package:incontext/core/services/firebase_storage_service.dart';
 import 'package:incontext/core/services/image_picker_service.dart';
 import 'package:incontext/core/services/media_uploader.dart';
@@ -29,7 +32,8 @@ final loggerProvider = Provider<Logger>((ref) {
       lineLength: 50,
       colors: false,
     ),
-    level: app_config.AppConfig.instance.enableLogging ? Level.debug : Level.error,
+    level:
+        app_config.AppConfig.instance.enableLogging ? Level.debug : Level.error,
   );
 });
 
@@ -43,7 +47,8 @@ Logger get logger {
       lineLength: 50,
       colors: false,
     ),
-    level: app_config.AppConfig.instance.enableLogging ? Level.debug : Level.error,
+    level:
+        app_config.AppConfig.instance.enableLogging ? Level.debug : Level.error,
   );
   return _logger!;
 }
@@ -125,4 +130,22 @@ final audioRecorderServiceProvider = Provider<AudioRecorderService>((ref) {
 final mediaUploaderProvider = Provider<MediaUploader>((ref) {
   final storage = ref.watch(firebaseStorageProvider);
   return MediaUploader(storage);
+});
+
+/// Dummy transcription service provider
+final dummyTranscriptionServiceProvider =
+    Provider<DummyTranscriptionService>((ref) {
+  return const DummyTranscriptionService();
+});
+
+/// Dummy context enhancement service provider
+final dummyContextEnhancementServiceProvider =
+    Provider<DummyContextEnhancementService>((ref) {
+  return const DummyContextEnhancementService();
+});
+
+/// Dummy output generation service provider
+final dummyOutputGenerationServiceProvider =
+    Provider<DummyOutputGenerationService>((ref) {
+  return const DummyOutputGenerationService();
 });
