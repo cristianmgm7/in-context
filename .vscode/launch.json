@@ -1,0 +1,80 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        // === iOS Simulator ===
+        {
+            "name": "📱 iOS Simulator (iPhone 16 Pro)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "deviceId": "F0762F45-54FB-4AC1-B2A5-3530145A2420"
+        },
+        {
+            "name": "📱 iOS Simulator (iPhone 15 Pro)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "deviceId": "6AA19534-BF71-4F45-844A-392F8033BA9A"
+        },
+
+        // === iOS Physical Devices ===
+        {
+            "name": "📱 iPhone (Cristian's Device)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "deviceId": "00008030-00010C31110A802E"
+        },
+        {
+            "name": "📱 iPhone X",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "deviceId": "011a383549b06a289a4fd1d32ac5145d13066afe"
+        },
+
+        // === Android Devices ===
+        {
+            "name": "🤖 Android Emulator",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "deviceId": "emulator-5554"
+        },
+        {
+            "name": "🤖 Android Device (Auto-detect)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart"
+        },
+
+        // === Web ===
+        {
+            "name": "🌐 Chrome (Web)",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "deviceId": "chrome"
+        },
+
+        // === macOS ===
+        {
+            "name": "💻 macOS Desktop",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "debug",
+            "program": "lib/main.dart",
+            "deviceId": "macos"
+        }
+    ]
+}

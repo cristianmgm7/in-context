@@ -2,6 +2,7 @@
 // ignore_for_file: type=lint
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;
 import 'package:flutter/foundation.dart' show defaultTargetPlatform, kIsWeb, TargetPlatform;
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 /// Default [FirebaseOptions] for use with your Firebase apps.
 ///
@@ -62,14 +63,14 @@ class DefaultFirebaseOptions {
     storageBucket: 'kairos-develop.firebasestorage.app',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyAqF44qS0ZI4_YOnRysk-kFmfTPJ8895EU',
-    appId: '1:854546904017:ios:a85b2990d37438545866f0',
-    messagingSenderId: '854546904017',
-    projectId: 'kairos-develop',
-    storageBucket: 'kairos-develop.firebasestorage.app',
-    iosClientId: '854546904017-fd2m67ls1li4l1dluska32bddkh74bd5.apps.googleusercontent.com',
-    iosBundleId: 'com.kairos-app.dev',
+  static FirebaseOptions get ios => FirebaseOptions(
+    apiKey: dotenv.env['IOS_API_KEY'] ?? '',
+    appId: dotenv.env['IOS_APP_ID'] ?? '',
+    messagingSenderId: dotenv.env['IOS_MESSAGING_SENDER_ID'] ?? '',
+    projectId: dotenv.env['IOS_PROJECT_ID'] ?? '',
+    storageBucket: dotenv.env['IOS_STORAGE_BUCKET'] ?? '',
+    iosClientId: dotenv.env['IOS_CLIENT_ID'] ?? '',
+    iosBundleId: dotenv.env['IOS_BUNDLE_ID'] ?? '',
   );
 
 }
