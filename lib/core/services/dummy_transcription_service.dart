@@ -1,4 +1,3 @@
-import 'package:incontext/core/errors/failures.dart';
 import 'package:incontext/core/utils/result.dart';
 
 class TranscriptionResult {
