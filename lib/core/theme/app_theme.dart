@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'package:incontext_core/core/theme/app_colors.dart';
-import 'package:incontext_core/core/theme/app_radii.dart';
-import 'package:incontext_core/core/theme/app_typography.dart';
+import 'package:incontext/core/theme/app_colors.dart';
+import 'package:incontext/core/theme/app_radii.dart';
+import 'package:incontext/core/theme/app_typography.dart';
 
 class AppTheme {
   AppTheme._();

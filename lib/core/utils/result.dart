@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:incontext_core/core/errors/failures.dart';
+import 'package:incontext/core/errors/failures.dart';
 
 sealed class Result<T> extends Equatable {
   const Result();

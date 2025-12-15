@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:kairos/l10n/app_localizations.dart';
+// import 'package:kairos/l10n/app_localizations.dart';
 
 /// MainScaffold provides a persistent bottom navigation bar for the main app.
 /// This widget wraps all tab screens via GoRouter's ShellRoute.
@@ -39,7 +39,8 @@ class _MainBottomNavigationBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
+    // TODO: Add localization support later
+    // final l10n = AppLocalizations.of(context)!;
 
     return NavigationBar(
       selectedIndex: navigationShell.currentIndex,
@@ -49,12 +50,12 @@ class _MainBottomNavigationBar extends StatelessWidget {
         NavigationDestination(
           icon: const Icon(Icons.home_outlined),
           selectedIcon: const Icon(Icons.home),
-          label: l10n.home,
+          label: 'Home',
         ),
         NavigationDestination(
           icon: const Icon(Icons.book_outlined),
           selectedIcon: const Icon(Icons.book),
-          label: l10n.journal,
+          label: 'Journal',
         ),
         const NavigationDestination(
           icon: Icon(Icons.insights_outlined),
@@ -64,7 +65,7 @@ class _MainBottomNavigationBar extends StatelessWidget {
         NavigationDestination(
           icon: const Icon(Icons.settings_outlined),
           selectedIcon: const Icon(Icons.settings),
-          label: l10n.settings,
+          label: 'Settings',
         ),
       ],
     );

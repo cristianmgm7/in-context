@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:incontext_core/core/extensions/extensions.dart';
-import 'package:incontext_core/core/theme/app_spacing.dart';
+import 'package:incontext/core/extensions/extensions.dart';
+import 'package:incontext/core/theme/app_spacing.dart';
 
 class ErrorBody extends StatelessWidget {
   const ErrorBody({

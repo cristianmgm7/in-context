@@ -1,0 +1,189 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "Kairos",
+  "@appTitle": {
+    "description": "The application title"
+  },
+
+  "home": "Home",
+  "@home": {
+    "description": "Home tab label"
+  },
+
+  "journal": "Journal",
+  "@journal": {
+    "description": "Journal tab label"
+  },
+
+  "notifications": "Notifications",
+  "@notifications": {
+    "description": "Notifications tab label"
+  },
+
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings tab label"
+  },
+
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile label"
+  },
+
+  "language": "Language",
+  "@language": {
+    "description": "Language setting label"
+  },
+
+  "theme": "Theme",
+  "@theme": {
+    "description": "Theme setting label"
+  },
+
+  "themeLight": "Light",
+  "@themeLight": {
+    "description": "Light theme option"
+  },
+
+  "themeDark": "Dark",
+  "@themeDark": {
+    "description": "Dark theme option"
+  },
+
+  "themeSystem": "System",
+  "@themeSystem": {
+    "description": "System theme option"
+  },
+
+  "english": "English",
+  "@english": {
+    "description": "English language option"
+  },
+
+  "spanish": "Spanish",
+  "@spanish": {
+    "description": "Spanish language option"
+  },
+
+  "logout": "Logout",
+  "@logout": {
+    "description": "Logout button label"
+  },
+
+  "error": "Error",
+  "@error": {
+    "description": "Generic error label"
+  },
+
+  "loading": "Loading",
+  "@loading": {
+    "description": "Loading indicator label"
+  },
+
+  "noProfileFound": "No profile found",
+  "@noProfileFound": {
+    "description": "Message when user profile is not found"
+  },
+
+  "dateOfBirth": "Date of Birth",
+  "@dateOfBirth": {
+    "description": "Date of birth label"
+  },
+
+  "country": "Country",
+  "@country": {
+    "description": "Country label"
+  },
+
+  "gender": "Gender",
+  "@gender": {
+    "description": "Gender label"
+  },
+
+  "mainGoal": "Main Goal",
+  "@mainGoal": {
+    "description": "Main goal label"
+  },
+
+  "experienceLevel": "Experience Level",
+  "@experienceLevel": {
+    "description": "Experience level label"
+  },
+
+  "interests": "Interests",
+  "@interests": {
+    "description": "Interests label"
+  },
+
+  "editProfile": "Edit Profile",
+  "@editProfile": {
+    "description": "Edit profile button label"
+  },
+
+  "editProfileComingSoon": "Edit profile - Coming soon",
+  "@editProfileComingSoon": {
+    "description": "Edit profile coming soon message"
+  },
+
+  "notSet": "Not set",
+  "@notSet": {
+    "description": "Placeholder when a field is not set"
+  },
+
+  "deleteThreadTitle": "Delete Thread",
+  "@deleteThreadTitle": {
+    "description": "Title for delete thread confirmation dialog"
+  },
+
+  "deleteThreadContent": "Are you sure you want to delete this thread? This will also delete all messages and media files. This action cannot be undone.",
+  "@deleteThreadContent": {
+    "description": "Content message for delete thread confirmation dialog"
+  },
+
+  "delete": "Delete",
+  "@delete": {
+    "description": "Delete button label"
+  },
+
+  "back": "Back",
+  "@back": {
+    "description": "Back button tooltip"
+  },
+
+  "profileAndSettings": "Profile and Settings",
+  "@profileAndSettings": {
+    "description": "Header title for profile and settings screen"
+  },
+
+  "moreOptions": "More options",
+  "@moreOptions": {
+    "description": "Tooltip for more options button"
+  },
+
+  "user": "User",
+  "@user": {
+    "description": "Fallback name when user name is not available"
+  },
+
+  "appSettings": "App Settings",
+  "@appSettings": {
+    "description": "Title for app settings section"
+  },
+
+  "dataAndPrivacy": "Data & Privacy",
+  "@dataAndPrivacy": {
+    "description": "Title for data and privacy settings section"
+  },
+
+  "manageYourData": "Manage Your Data",
+  "@manageYourData": {
+    "description": "Label for manage your data settings option"
+  },
+
+  "pushNotifications": "Push Notifications",
+  "@pushNotifications": {
+    "description": "Label for push notifications settings option"
+  }
+}
+

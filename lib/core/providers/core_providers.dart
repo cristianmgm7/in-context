@@ -6,19 +6,19 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:incontext_core/core/config/firebase_config.dart';
-import 'package:incontext_core/core/config/flavor_config.dart';
-import 'package:incontext_core/core/services/audio_recorder_service.dart';
-import 'package:incontext_core/core/services/firebase_storage_service.dart';
-import 'package:incontext_core/core/services/image_picker_service.dart';
-import 'package:incontext_core/core/services/media_uploader.dart';
+import 'package:incontext/core/config/firebase_config.dart';
+import 'package:incontext/core/config/flavor_config.dart' as app_config;
+import 'package:incontext/core/services/audio_recorder_service.dart';
+import 'package:incontext/core/services/firebase_storage_service.dart';
+import 'package:incontext/core/services/image_picker_service.dart';
+import 'package:incontext/core/services/media_uploader.dart';
 import 'package:logger/logger.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 import 'package:record/record.dart';
 
 // Export network providers
-export 'package:incontext_core/core/network/api_client.dart';
-export 'package:incontext_core/core/network/network_info.dart';
+export 'package:incontext/core/network/api_client.dart';
+export 'package:incontext/core/network/network_info.dart';
 
 /// Logger provider - foundational logging service
 final loggerProvider = Provider<Logger>((ref) {
@@ -29,11 +29,11 @@ final loggerProvider = Provider<Logger>((ref) {
       lineLength: 50,
       colors: false,
     ),
-    level: FlavorConfig.instance.enableLogging ? Level.debug : Level.error,
+    level: app_config.AppConfig.instance.enableLogging ? Level.debug : Level.error,
   );
 });
 
-/// Global logger instance - initialized lazily after FlavorConfig
+/// Global logger instance - initialized lazily after AppConfig
 Logger? _logger;
 Logger get logger {
   _logger ??= Logger(
@@ -43,7 +43,7 @@ Logger get logger {
       lineLength: 50,
       colors: false,
     ),
-    level: FlavorConfig.instance.enableLogging ? Level.debug : Level.error,
+    level: app_config.AppConfig.instance.enableLogging ? Level.debug : Level.error,
   );
   return _logger!;
 }
@@ -82,7 +82,7 @@ final firestoreProvider = Provider<FirebaseFirestore>((ref) {
 
 /// Dio provider - HTTP client with logging and configuration
 final dioProvider = Provider<Dio>((ref) {
-  final config = FlavorConfig.instance;
+  final config = app_config.AppConfig.instance;
 
   final dio = Dio(
     BaseOptions(

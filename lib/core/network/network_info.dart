@@ -1,7 +1,7 @@
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:incontext_core/core/providers/core_providers.dart';
+import 'package:incontext/core/providers/core_providers.dart';
 
 abstract class NetworkInfo {
   Future<bool> get isConnected;

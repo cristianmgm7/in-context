@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:incontext_core/core/errors/failures.dart';
-import 'package:incontext_core/core/utils/result.dart';
+import 'package:incontext/core/errors/failures.dart';
+import 'package:incontext/core/utils/result.dart';
 
 /// Result returned from successful upload
 class UploadResult {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:incontext_core/core/theme/app_spacing.dart';
+import 'package:incontext/core/theme/app_spacing.dart';
 
 /// A reusable empty state widget for displaying when there's no content
 class EmptyState extends StatelessWidget {

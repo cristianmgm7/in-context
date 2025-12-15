@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:incontext_core/core/errors/failures.dart';
-import 'package:incontext_core/core/utils/result.dart';
+import 'package:incontext/core/errors/failures.dart';
+import 'package:incontext/core/utils/result.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:record/record.dart';
 

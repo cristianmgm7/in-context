@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:incontext_core/core/errors/exceptions.dart';
-import 'package:incontext_core/core/providers/core_providers.dart';
+import 'package:incontext/core/errors/exceptions.dart';
+import 'package:incontext/core/providers/core_providers.dart';
 
 class ApiClient {
   ApiClient(this._dio);

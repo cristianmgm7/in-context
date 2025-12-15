@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:incontext_core/core/widgets/app_button.dart';
-import 'package:incontext_core/core/widgets/app_text.dart';
+import 'package:incontext/core/widgets/app_button.dart';
+import 'package:incontext/core/widgets/app_text.dart';
 
 /// A reusable dialog widget for the app
 class AppDialog extends StatelessWidget {

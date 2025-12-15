@@ -2,8 +2,8 @@ import 'dart:io';
 
 import 'package:image_picker/image_picker.dart';
 
-import 'package:incontext_core/core/errors/failures.dart';
-import 'package:incontext_core/core/utils/result.dart';
+import 'package:incontext/core/errors/failures.dart';
+import 'package:incontext/core/utils/result.dart';
 
 /// Service for handling image picking from gallery or camera
 class ImagePickerService {

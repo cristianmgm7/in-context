@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import 'package:incontext_core/core/routing/app_routes.dart';
+import 'package:incontext/core/routing/app_routes.dart';
 
 class ErrorPage extends StatelessWidget {
   const ErrorPage({
@@ -38,7 +38,7 @@ class ErrorPage extends StatelessWidget {
                 ),
               const SizedBox(height: 32),
               ElevatedButton(
-                onPressed: () => context.go(AppRoutes.splash),
+                onPressed: () => context.go(AppRoutes.home),
                 child: const Text('Go to Home'),
               ),
             ],

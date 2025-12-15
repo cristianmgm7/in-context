@@ -2,8 +2,8 @@ import 'dart:io';
 import 'dart:typed_data';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:image/image.dart' as img;
-import 'package:incontext_core/core/errors/failures.dart';
-import 'package:incontext_core/core/utils/result.dart';
+import 'package:incontext/core/errors/failures.dart';
+import 'package:incontext/core/utils/result.dart';
 
 enum FileType { image, audio, document }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:incontext_core/core/widgets/keyboard_dismisser.dart';
+import 'package:incontext/core/widgets/keyboard_dismisser.dart';
 import 'package:nested/nested.dart';
 
 class Globals extends StatelessWidget {

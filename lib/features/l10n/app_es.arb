@@ -1,0 +1,50 @@
+{
+  "@@locale": "es",
+
+  "appTitle": "Kairos",
+
+  "home": "Inicio",
+  "journal": "Diario",
+  "notifications": "Notificaciones",
+  "settings": "Ajustes",
+  "profile": "Perfil",
+
+  "language": "Idioma",
+  "theme": "Tema",
+
+  "themeLight": "Claro",
+  "themeDark": "Oscuro",
+  "themeSystem": "Sistema",
+
+  "english": "Inglés",
+  "spanish": "Español",
+
+  "logout": "Cerrar sesión",
+  "error": "Error",
+  "loading": "Cargando",
+
+  "noProfileFound": "No se encontró perfil",
+  "dateOfBirth": "Fecha de nacimiento",
+  "country": "País",
+  "gender": "Género",
+  "mainGoal": "Objetivo principal",
+  "experienceLevel": "Nivel de experiencia",
+  "interests": "Intereses",
+  "editProfile": "Editar perfil",
+  "editProfileComingSoon": "Editar perfil - Próximamente",
+  "notSet": "No establecido",
+
+  "deleteThreadTitle": "Eliminar hilo",
+  "deleteThreadContent": "¿Estás seguro de que quieres eliminar este hilo? Esto también eliminará todos los mensajes y archivos multimedia. Esta acción no se puede deshacer.",
+  "delete": "Eliminar",
+
+  "back": "Atrás",
+  "profileAndSettings": "Perfil y Ajustes",
+  "moreOptions": "Más opciones",
+  "user": "Usuario",
+  "appSettings": "Ajustes de la aplicación",
+  "dataAndPrivacy": "Datos y Privacidad",
+  "manageYourData": "Gestionar tus datos",
+  "pushNotifications": "Notificaciones push"
+}
+

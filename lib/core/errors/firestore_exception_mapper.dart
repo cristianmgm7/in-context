@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:incontext_core/core/errors/exceptions.dart';
+import 'package:incontext/core/errors/exceptions.dart';
 
 /// Maps Firestore exceptions to domain exceptions
 ///

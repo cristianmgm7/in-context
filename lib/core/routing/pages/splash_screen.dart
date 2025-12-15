@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:incontext_core/core/extensions/extensions.dart';
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({
-    this.title = 'Kairos',
+    required this.title,
     super.key,
   });
 
@@ -11,18 +10,16 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.theme;
-
     return Scaffold(
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const CircularProgressIndicator(),
-            const SizedBox(height: 16),
+            const SizedBox(height: 24),
             Text(
               title,
-              style: theme.textTheme.titleLarge,
+              style: Theme.of(context).textTheme.headlineSmall,
             ),
           ],
         ),
