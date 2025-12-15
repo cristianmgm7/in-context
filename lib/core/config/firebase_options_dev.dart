@@ -64,13 +64,13 @@ class DefaultFirebaseOptions {
   );
 
   static FirebaseOptions get ios => FirebaseOptions(
-    apiKey: dotenv.env['IOS_API_KEY'] ?? '',
-    appId: dotenv.env['IOS_APP_ID'] ?? '',
-    messagingSenderId: dotenv.env['IOS_MESSAGING_SENDER_ID'] ?? '',
-    projectId: dotenv.env['IOS_PROJECT_ID'] ?? '',
-    storageBucket: dotenv.env['IOS_STORAGE_BUCKET'] ?? '',
-    iosClientId: dotenv.env['IOS_CLIENT_ID'] ?? '',
-    iosBundleId: dotenv.env['IOS_BUNDLE_ID'] ?? '',
+    apiKey: dotenv.env['IOS_API_KEY'] ?? 'AIzaSyBHQqCvxLU5Pn5GaTjd4tKAgleCZNh15Is',
+    appId: dotenv.env['IOS_APP_ID'] ?? '1:602139630898:ios:54ac413679724c75c28b2b',
+    messagingSenderId: dotenv.env['IOS_MESSAGING_SENDER_ID'] ?? '602139630898',
+    projectId: dotenv.env['IOS_PROJECT_ID'] ?? 'in-context-44e6c',
+    storageBucket: dotenv.env['IOS_STORAGE_BUCKET'] ?? 'in-context-44e6c.firebasestorage.app',
+    iosClientId: dotenv.env['IOS_CLIENT_ID'] ?? '602139630898-nucghdriilkt7ucqeuob9a7ucvk1cmvc.apps.googleusercontent.com',
+    iosBundleId: dotenv.env['IOS_BUNDLE_ID'] ?? 'com.in-context',
   );
 
 }

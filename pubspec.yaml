@@ -138,6 +138,7 @@ flutter:
 
   assets:
     - assets/
+    - .env
 
 dependency_overrides:
   # Fix compile error: record_linux 0.7.x is incompatible with record_platform_interface >=1.4.0
