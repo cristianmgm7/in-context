@@ -38,6 +38,11 @@ migrate_working_dir/
 .env.local
 .env.*.local
 
+# Firebase configuration files
+# Note: GoogleService-Info.plist is needed for iOS Google Sign-In
+# Only ignore Android config as we use .env for both platforms
+**/google-services.json
+
 # Symbolication related
 app.*.symbols
 

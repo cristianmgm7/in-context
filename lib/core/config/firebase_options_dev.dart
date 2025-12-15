@@ -46,31 +46,79 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'PLACEHOLDER_API_KEY',
-    appId: 'PLACEHOLDER_APP_ID',
-    messagingSenderId: 'PLACEHOLDER_SENDER_ID',
-    projectId: 'PLACEHOLDER_PROJECT_ID',
-    authDomain: 'PLACEHOLDER_AUTH_DOMAIN',
-    storageBucket: 'PLACEHOLDER_STORAGE_BUCKET',
-  );
+  static FirebaseOptions get web {
+    final apiKey = dotenv.env['WEB_API_KEY'];
+    final appId = dotenv.env['WEB_APP_ID'];
+    final messagingSenderId = dotenv.env['WEB_MESSAGING_SENDER_ID'];
+    final projectId = dotenv.env['WEB_PROJECT_ID'];
+    final authDomain = dotenv.env['WEB_AUTH_DOMAIN'];
+    final storageBucket = dotenv.env['WEB_STORAGE_BUCKET'];
 
-  static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAvhbbV3SKeI5cWzrerKe7QRZ95QejIlGY',
-    appId: '1:854546904017:android:7467172813414d1a5866f0',
-    messagingSenderId: '854546904017',
-    projectId: 'kairos-develop',
-    storageBucket: 'kairos-develop.firebasestorage.app',
-  );
+    if (apiKey == null || appId == null || messagingSenderId == null || projectId == null) {
+      throw Exception(
+        'Web Firebase configuration is missing. Please add WEB_API_KEY, WEB_APP_ID, '
+        'WEB_MESSAGING_SENDER_ID, and WEB_PROJECT_ID to your .env file.',
+      );
+    }
 
-  static FirebaseOptions get ios => FirebaseOptions(
-    apiKey: dotenv.env['IOS_API_KEY'] ?? 'AIzaSyBHQqCvxLU5Pn5GaTjd4tKAgleCZNh15Is',
-    appId: dotenv.env['IOS_APP_ID'] ?? '1:602139630898:ios:54ac413679724c75c28b2b',
-    messagingSenderId: dotenv.env['IOS_MESSAGING_SENDER_ID'] ?? '602139630898',
-    projectId: dotenv.env['IOS_PROJECT_ID'] ?? 'in-context-44e6c',
-    storageBucket: dotenv.env['IOS_STORAGE_BUCKET'] ?? 'in-context-44e6c.firebasestorage.app',
-    iosClientId: dotenv.env['IOS_CLIENT_ID'] ?? '602139630898-nucghdriilkt7ucqeuob9a7ucvk1cmvc.apps.googleusercontent.com',
-    iosBundleId: dotenv.env['IOS_BUNDLE_ID'] ?? 'com.in-context',
-  );
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+      authDomain: authDomain ?? '$projectId.firebaseapp.com',
+      storageBucket: storageBucket ?? '$projectId.firebasestorage.app',
+    );
+  }
+
+  static FirebaseOptions get android {
+    final apiKey = dotenv.env['ANDROID_API_KEY'];
+    final appId = dotenv.env['ANDROID_APP_ID'];
+    final messagingSenderId = dotenv.env['ANDROID_MESSAGING_SENDER_ID'];
+    final projectId = dotenv.env['ANDROID_PROJECT_ID'];
+    final storageBucket = dotenv.env['ANDROID_STORAGE_BUCKET'];
+
+    if (apiKey == null || appId == null || messagingSenderId == null || projectId == null) {
+      throw Exception(
+        'Android Firebase configuration is missing. Please add ANDROID_API_KEY, ANDROID_APP_ID, '
+        'ANDROID_MESSAGING_SENDER_ID, and ANDROID_PROJECT_ID to your .env file.',
+      );
+    }
+
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+      storageBucket: storageBucket ?? '$projectId.firebasestorage.app',
+    );
+  }
+
+  static FirebaseOptions get ios {
+    final apiKey = dotenv.env['IOS_API_KEY'];
+    final appId = dotenv.env['IOS_APP_ID'];
+    final messagingSenderId = dotenv.env['IOS_MESSAGING_SENDER_ID'];
+    final projectId = dotenv.env['IOS_PROJECT_ID'];
+    final storageBucket = dotenv.env['IOS_STORAGE_BUCKET'];
+    final iosClientId = dotenv.env['IOS_CLIENT_ID'];
+    final iosBundleId = dotenv.env['IOS_BUNDLE_ID'];
+
+    if (apiKey == null || appId == null || messagingSenderId == null || projectId == null) {
+      throw Exception(
+        'iOS Firebase configuration is missing. Please add IOS_API_KEY, IOS_APP_ID, '
+        'IOS_MESSAGING_SENDER_ID, and IOS_PROJECT_ID to your .env file.',
+      );
+    }
+
+    return FirebaseOptions(
+      apiKey: apiKey,
+      appId: appId,
+      messagingSenderId: messagingSenderId,
+      projectId: projectId,
+      storageBucket: storageBucket ?? '$projectId.firebasestorage.app',
+      iosClientId: iosClientId,
+      iosBundleId: iosBundleId ?? 'com.in-context',
+    );
+  }
 
 }
