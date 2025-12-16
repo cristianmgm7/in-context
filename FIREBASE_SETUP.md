@@ -89,7 +89,55 @@ When a new developer joins:
 3. Fill in their `.env` file with the real values
 4. Never commit their `.env` file to git
 
+### 4. Deploy Firebase Security Rules
+
+After setting up your Firebase project, deploy the security rules using the provided script:
+
+```bash
+# Make sure you're in the project root directory
+./deploy_firebase_rules.sh
+```
+
+Or deploy manually:
+
+```bash
+# Install Firebase CLI (if not already installed)
+npm install -g firebase-tools
+
+# Login to Firebase
+firebase login
+
+# Initialize Firebase in your project (select Firestore and Storage when prompted)
+firebase init
+
+# Deploy security rules
+firebase deploy --only firestore:rules,storage
+```
+
+#### Security Rules Overview
+
+The security rules ensure that:
+
+**Firestore Rules (`firestore.rules`):**
+- Users can only access their own data under `users/{userId}/` paths
+- Projects: `users/{userId}/projects/{projectId}`
+- Thoughts: `users/{userId}/projects/{projectId}/thoughts/{thoughtId}`
+- Contexts: `users/{userId}/projects/{projectId}/contexts/{contextId}`
+- Outputs: `users/{userId}/projects/{projectId}/outputs/{outputId}`
+
+**Storage Rules (`storage.rules`):**
+- Audio files are stored securely under `audio/{userId}/` paths
+- Only authenticated users can access their own files
+
+**Key Security Features:**
+- ✅ Authentication required for all operations
+- ✅ User-scoped data access (users can only see their own data)
+- ✅ Hierarchical permission checks for nested collections
+- ✅ Secure file storage with user-based paths
+
 ## Additional Resources
 
 - [Firebase Setup Documentation](https://firebase.google.com/docs/flutter/setup)
 - [Google Sign-In for iOS Setup](https://developers.google.com/identity/sign-in/ios/start-integrating)
+- [Firestore Security Rules](https://firebase.google.com/docs/firestore/security/get-started)
+- [Firebase Storage Security Rules](https://firebase.google.com/docs/storage/security/start)

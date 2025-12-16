@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:incontext/core/providers/core_providers.dart';
 import 'package:incontext/core/services/audio_recorder_service.dart';
@@ -15,8 +16,9 @@ final thoughtControllerProvider =
   final audioRecorder = ref.watch(audioRecorderServiceProvider);
   final mediaUploader = ref.watch(mediaUploaderProvider);
   final transcriptionService = ref.watch(dummyTranscriptionServiceProvider);
+  final firebaseAuth = ref.watch(firebaseAuthProvider);
   return ThoughtController(
-      repository, audioRecorder, mediaUploader, transcriptionService);
+      repository, audioRecorder, mediaUploader, transcriptionService, firebaseAuth);
 });
 
 /// Controller for thought operations
@@ -26,12 +28,20 @@ class ThoughtController extends StateNotifier<ThoughtState> {
     this._audioRecorderService,
     this._mediaUploader,
     this._transcriptionService,
+    this._firebaseAuth,
   ) : super(const ThoughtState());
 
   final ThoughtRepository _repository;
   final AudioRecorderService _audioRecorderService;
   final MediaUploader _mediaUploader;
   final DummyTranscriptionService _transcriptionService;
+  final firebase_auth.FirebaseAuth _firebaseAuth;
+
+  String get _userId {
+    final user = _firebaseAuth.currentUser;
+    if (user == null) throw Exception('User not authenticated');
+    return user.uid;
+  }
 
   Future<void> createTextThought({
     required String projectId,
@@ -78,7 +88,7 @@ class ThoughtController extends StateNotifier<ThoughtState> {
     await recordingResult.when(
       success: (audioResult) async {
         // Upload to Firebase Storage
-        final uploadPath = 'audio/${DateTime.now().millisecondsSinceEpoch}.m4a';
+        final uploadPath = 'audio/$_userId/${DateTime.now().millisecondsSinceEpoch}.m4a';
         final uploadResult = await _mediaUploader.uploadFile(
           file: audioResult.file,
           storagePath: uploadPath,
