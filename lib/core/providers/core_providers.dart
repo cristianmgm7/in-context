@@ -10,9 +10,6 @@ import 'package:incontext/core/config/firebase_config.dart';
 import 'package:incontext/core/config/flavor_config.dart' as app_config;
 import 'package:incontext/core/services/audio_recorder_service.dart';
 import 'package:incontext/core/services/context_enhancement_service.dart';
-import 'package:incontext/core/services/dummy_context_enhancement_service.dart';
-import 'package:incontext/core/services/dummy_output_generation_service.dart';
-import 'package:incontext/core/services/dummy_transcription_service.dart';
 import 'package:incontext/core/services/firebase_storage_service.dart';
 import 'package:incontext/core/services/google_ai_service.dart';
 import 'package:incontext/core/services/output_generation_service.dart';
@@ -159,20 +156,3 @@ final outputGenerationServiceProvider = Provider<OutputGenerationService>((ref) 
   return OutputGenerationService(googleAIService: googleAI);
 });
 
-/// Dummy transcription service provider
-final dummyTranscriptionServiceProvider =
-    Provider<DummyTranscriptionService>((ref) {
-  return const DummyTranscriptionService();
-});
-
-/// Dummy context enhancement service provider
-final dummyContextEnhancementServiceProvider =
-    Provider<DummyContextEnhancementService>((ref) {
-  return const DummyContextEnhancementService();
-});
-
-/// Dummy output generation service provider
-final dummyOutputGenerationServiceProvider =
-    Provider<DummyOutputGenerationService>((ref) {
-  return const DummyOutputGenerationService();
-});
