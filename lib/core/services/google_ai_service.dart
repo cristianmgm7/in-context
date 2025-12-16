@@ -21,7 +21,7 @@ class GoogleAIService {
 
   /// Create a Gemini model instance
   GenerativeModel _createModel({
-    String modelName = 'gemini-1.5-flash',
+    String modelName = 'gemini-2.5-pro',
     double temperature = 0.7,
   }) {
     return GenerativeModel(
@@ -37,7 +37,7 @@ class GoogleAIService {
   /// Generate content from text prompt
   Future<Result<String>> generateContent({
     required String prompt,
-    String modelName = 'gemini-1.5-flash',
+    String modelName = 'gemini-2.5-pro',
     double temperature = 0.7,
   }) async {
     try {
@@ -71,7 +71,7 @@ class GoogleAIService {
   /// Generate content with streaming (for future use)
   Stream<String> generateContentStream({
     required String prompt,
-    String modelName = 'gemini-1.5-flash',
+    String modelName = 'gemini-2.5-pro',
   }) async* {
     try {
       final model = _createModel(modelName: modelName);
