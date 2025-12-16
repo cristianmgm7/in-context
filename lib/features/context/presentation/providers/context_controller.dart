@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:incontext/core/providers/core_providers.dart';
-import 'package:incontext/core/services/dummy_context_enhancement_service.dart';
+import 'package:incontext/core/services/context_enhancement_service.dart';
 import 'package:incontext/core/utils/result.dart';
 import 'package:incontext/features/context/domain/entities/thought_entity.dart';
 import 'package:incontext/features/context/domain/repositories/context_repository.dart';
@@ -10,7 +10,7 @@ import 'package:incontext/features/context/presentation/providers/context_provid
 final contextControllerProvider =
     StateNotifierProvider<ContextController, ContextState>((ref) {
   final repository = ref.watch(contextRepositoryProvider);
-  final enhancementService = ref.watch(dummyContextEnhancementServiceProvider);
+  final enhancementService = ref.watch(contextEnhancementServiceProvider);
   return ContextController(repository, enhancementService);
 });
 
@@ -20,7 +20,7 @@ class ContextController extends StateNotifier<ContextState> {
       : super(const ContextState());
 
   final ContextRepository _repository;
-  final DummyContextEnhancementService _enhancementService;
+  final ContextEnhancementService _enhancementService;
 
   Future<void> enhanceContext({
     required String projectId,

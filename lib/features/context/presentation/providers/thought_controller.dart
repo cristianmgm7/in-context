@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:incontext/core/providers/core_providers.dart';
 import 'package:incontext/core/services/audio_recorder_service.dart';
-import 'package:incontext/core/services/dummy_transcription_service.dart';
+import 'package:incontext/core/services/transcription_service.dart';
 import 'package:incontext/core/services/media_uploader.dart';
 import 'package:incontext/core/utils/result.dart';
 import 'package:incontext/features/context/domain/entities/thought_entity.dart';
@@ -15,7 +15,7 @@ final thoughtControllerProvider =
   final repository = ref.watch(thoughtRepositoryProvider);
   final audioRecorder = ref.watch(audioRecorderServiceProvider);
   final mediaUploader = ref.watch(mediaUploaderProvider);
-  final transcriptionService = ref.watch(dummyTranscriptionServiceProvider);
+  final transcriptionService = ref.watch(transcriptionServiceProvider);
   final firebaseAuth = ref.watch(firebaseAuthProvider);
   return ThoughtController(
       repository, audioRecorder, mediaUploader, transcriptionService, firebaseAuth);
@@ -34,7 +34,7 @@ class ThoughtController extends StateNotifier<ThoughtState> {
   final ThoughtRepository _repository;
   final AudioRecorderService _audioRecorderService;
   final MediaUploader _mediaUploader;
-  final DummyTranscriptionService _transcriptionService;
+  final TranscriptionService _transcriptionService;
   final firebase_auth.FirebaseAuth _firebaseAuth;
 
   String get _userId {

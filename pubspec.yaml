@@ -64,6 +64,9 @@ dependencies:
   cloud_functions: ^5.1.3
   google_sign_in: ^6.2.2
 
+  # Google AI (Gemini)
+  google_generative_ai: ^0.2.2
+
   # Local Database (removed for now)
   # isar: ^3.1.0+1
   # isar_flutter_libs: ^3.1.0+1

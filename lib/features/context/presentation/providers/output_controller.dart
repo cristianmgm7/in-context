@@ -1,6 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:incontext/core/providers/core_providers.dart';
-import 'package:incontext/core/services/dummy_output_generation_service.dart';
+import 'package:incontext/core/services/output_generation_service.dart';
 import 'package:incontext/core/utils/result.dart';
 import 'package:incontext/features/context/domain/entities/context_entity.dart';
 import 'package:incontext/features/context/domain/entities/prompt_definition_entity.dart';
@@ -10,7 +10,7 @@ import 'package:incontext/features/context/presentation/providers/context_provid
 final outputControllerProvider =
     StateNotifierProvider<OutputController, OutputState>((ref) {
   final repository = ref.watch(outputRepositoryProvider);
-  final generationService = ref.watch(dummyOutputGenerationServiceProvider);
+  final generationService = ref.watch(outputGenerationServiceProvider);
   return OutputController(repository, generationService);
 });
 
@@ -19,7 +19,7 @@ class OutputController extends StateNotifier<OutputState> {
       : super(const OutputState());
 
   final OutputRepository _repository;
-  final DummyOutputGenerationService _generationService;
+  final OutputGenerationService _generationService;
 
   Future<void> generateOutput({
     required ContextEntity context,

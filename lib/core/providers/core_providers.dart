@@ -9,10 +9,14 @@ import 'package:image_picker/image_picker.dart';
 import 'package:incontext/core/config/firebase_config.dart';
 import 'package:incontext/core/config/flavor_config.dart' as app_config;
 import 'package:incontext/core/services/audio_recorder_service.dart';
+import 'package:incontext/core/services/context_enhancement_service.dart';
 import 'package:incontext/core/services/dummy_context_enhancement_service.dart';
 import 'package:incontext/core/services/dummy_output_generation_service.dart';
 import 'package:incontext/core/services/dummy_transcription_service.dart';
 import 'package:incontext/core/services/firebase_storage_service.dart';
+import 'package:incontext/core/services/google_ai_service.dart';
+import 'package:incontext/core/services/output_generation_service.dart';
+import 'package:incontext/core/services/transcription_service.dart';
 import 'package:incontext/core/services/image_picker_service.dart';
 import 'package:incontext/core/services/media_uploader.dart';
 import 'package:logger/logger.dart';
@@ -130,6 +134,29 @@ final audioRecorderServiceProvider = Provider<AudioRecorderService>((ref) {
 final mediaUploaderProvider = Provider<MediaUploader>((ref) {
   final storage = ref.watch(firebaseStorageProvider);
   return MediaUploader(storage);
+});
+
+/// Google AI base service provider
+final googleAIServiceProvider = Provider<GoogleAIService>((ref) {
+  return GoogleAIService();
+});
+
+/// Transcription service provider (replaces dummy)
+final transcriptionServiceProvider = Provider<TranscriptionService>((ref) {
+  final googleAI = ref.watch(googleAIServiceProvider);
+  return TranscriptionService(googleAIService: googleAI);
+});
+
+/// Context enhancement service provider (replaces dummy)
+final contextEnhancementServiceProvider = Provider<ContextEnhancementService>((ref) {
+  final googleAI = ref.watch(googleAIServiceProvider);
+  return ContextEnhancementService(googleAIService: googleAI);
+});
+
+/// Output generation service provider (replaces dummy)
+final outputGenerationServiceProvider = Provider<OutputGenerationService>((ref) {
+  final googleAI = ref.watch(googleAIServiceProvider);
+  return OutputGenerationService(googleAIService: googleAI);
 });
 
 /// Dummy transcription service provider
