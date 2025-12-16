@@ -53,3 +53,4 @@ echo "If you still see permission errors, make sure:"
 echo "1. Users are properly authenticated"
 echo "2. The Firebase project ID in your .env matches this deployment"
 echo "3. Rules were deployed to the correct Firebase project"
+
