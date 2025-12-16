@@ -71,20 +71,20 @@ class _ProjectScreenState extends ConsumerState<ProjectScreen> {
           appBar: AppBar(
             title: Text(project.title),
           ),
-          body: Column(
-            children: [
-              // Thoughts section
-              Expanded(
-                child: ThoughtsSection(
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                // Thoughts section
+                ThoughtsSection(
                   projectId: widget.projectId,
                 ),
-              ),
 
-              // Context section
-              ContextSection(
-                projectId: widget.projectId,
-              ),
-            ],
+                // Context section
+                ContextSection(
+                  projectId: widget.projectId,
+                ),
+              ],
+            ),
           ),
         );
       },

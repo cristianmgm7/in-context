@@ -36,7 +36,8 @@ class ThoughtsSection extends ConsumerWidget {
         ),
 
         // Thoughts list
-        Expanded(
+        SizedBox(
+          height: 300, // Fixed height for thoughts list
           child: thoughtsAsync.when(
             data: (thoughts) {
               if (thoughts.isEmpty) {
